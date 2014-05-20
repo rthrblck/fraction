@@ -1,4 +1,43 @@
-<template name="sidebar">
+<!-- To Do:
+
+1. Figure out why "Top" doesn't link to Top pages.
+2. Figure out how to set active status for tabs. -->
+
+<template name="topnav">
+    <ul class="nav nav-tabs">
+      <li><a href="/hot" class="{{activeSort 'hot'}}"><i class="fa fa-fire"></i> Hot</a></li>
+      <li><a href="/recent" class="{{activeSort 'recent'}}"><i class="fa fa-clock-o"></i> Recent</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle {{activeSort 'top'}}" data-toggle="dropdown" href="/top/week"><i class="fa fa-star"></i>
+          Top <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="{{activeTime 'hour'}}" href="/top/hour">Hour</a>
+          </li>
+          <li>
+            <a class="{{activeTime 'day'}}" href="/top/day">Day</a>
+          </li>
+          <li>
+            <a class="{{activeTime 'week'}}" href="/top/week">Week</a>
+          </li>
+          <li>
+            <a class="{{activeTime 'month'}}" href="/top/month">Month</a>
+          </li>
+          <li>
+            <a class="{{activeTime 'year'}}" href="/top/year">Year</a>
+          </li>
+          <li>
+            <a class="{{activeTime 'ever'}}" href="/top/ever">Ever</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="/random" class="{{activeSort 'random'}}"><i class="fa fa-random"></i> Random</a>
+      </li>
+    </ul>
+</template>
+
+<!-- <template name="sidebar">
   <sidebar class="col-sm-2">
     <a class="title" href="{{backLink}}"><img src="/img/logo.svg"> Fraction
       {{#if showBack}}
@@ -25,5 +64,4 @@
           <a href="/recent" class="{{activeSort 'recent'}} list-group-item"><i class="fa fa-clock-o"></i> Recent</a>
         <a href="/random" class="{{activeSort 'random'}} list-group-item"><i class="fa fa-random"></i> Random</a>
     </ul>
-  </sidebar>
-</template>
+</template> -->

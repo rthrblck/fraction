@@ -16,7 +16,7 @@ Handlebars.registerHelper('activeSort', function(sort) {
   }
 });
 
-Template.sidebar.helpers({
+Template.topnav.helpers({
   'isSortTop' : function () {
     if (Session.equals('sortType', 'top')) {
       return true;
